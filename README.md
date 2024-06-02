@@ -1,6 +1,6 @@
 # Workspace
 
-My Setup is optimized for Windows Terminal with WSL 2 (Ubuntu 22.04.03 LTS) with `JetBrainsMono Nerd Font Mono`.
+My Setup is optimized for Windows Terminal with WSL 2 (Ubuntu 22.04.03 LTS) and `JetBrainsMono Nerd Font Mono` as the font.
 For this configuration to work you need to have homebrew (brew) and oh-my-zsh installed.
 
 ## CLI Programms
