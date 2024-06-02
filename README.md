@@ -1,7 +1,6 @@
 # Workspace
 
-My Setup is optimized for Windows Terminal with WSL 2 (Ubuntu 22.04.03 LTS) and `JetBrainsMono Nerd Font Mono` as the font.
-For this configuration to work you need to have homebrew (brew) and oh-my-zsh installed.
+My workspace is optimized for Windows Terminal with WSL 2 (Ubuntu 22.04.03 LTS), using the JetBrainsMono Nerd Font Mono for a clean and efficient coding experience. This setup requires homebrew (brew) and oh-my-zsh to be installed.
 
 ## CLI Programms
 
@@ -17,12 +16,12 @@ For this configuration to work you need to have homebrew (brew) and oh-my-zsh in
 | zoxide   | A smarter cd command that helps you navigate your filesystem quickly by keeping track of your most used directories. It learns your usage patterns and enables fast directory jumping with minimal typing.                                   |
 | k9s      | A terminal-based UI to interact with your Kubernetes clusters, making it easier to manage and troubleshoot your containerized applications. It provides real-time insights, log access, and resource management with an intuitive interface. |
 | kubecm   | A tool for managing multiple Kubernetes configs with ease, allowing you to quickly switch between different clusters and namespaces.                                                                                                         |
-| git-delt | A tool for displaying better git-diffs in the CLI.                                                                                                                                                                                           |
+| git-delta| A tool for displaying better git-diffs in the CLI.                                                                                                                                                                                           |
 
 ### Installation
 
 ```bash
-brew install fzf fd bat eza zoxide k9s kubecm lazygit ripgrep git-delt
+brew install fzf fd bat eza zoxide k9s kubecm lazygit ripgrep git-delta
 ```
 
 ```bash
