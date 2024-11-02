@@ -5,7 +5,7 @@ eval "$(starship init zsh)"
 # --- PATH and other Setup ---
 
 . "$HOME/.cargo/env"
-export PATH=$PATH:/usr/local/go/bin:~/.local/bin:/snap/bin:~/go/bin:$BUN_INSTALL/bin
+export PATH=$PATH:/usr/local/go/bin:~/.local/bin:/snap/bin:~/go/bin:$BUN_INSTALL/bin:$HOME/.pyenv/bin:$PATH
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -91,7 +91,16 @@ alias lg="lazygit"
 alias vim="nvim"
 alias reload-zsh="source ~/.zshrc"
 alias edit-zsh="nvim ~/.zshrc"
+alias k="kubectl"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+if [ ! "$TMUX" ]; then
+        tmux attach -t main || tmux new -s main
+fi
+. "/home/robin/.deno/env"
