@@ -112,6 +112,17 @@ else
     print_status "Oh My Zsh is already installed."
 fi
 
+# Install fd-find
+print_status "Installing fd-find..."
+if ! command_exists fd; then
+    wget -q "https://github.com/sharkdp/fd/releases/download/v10.2.0/fd-musl_10.2.0_amd64.deb"
+    sudo dpkg -i fd-musl_10.2.0_amd64.deb
+    rm fd-musl_10.2.0_amd64.deb
+    print_success "fd installed successfully!"
+else
+    print_status "fd is already installed."
+fi
+
 # Install delta (git-delta)
 print_status "Installing delta..."
 if ! command_exists delta; then
