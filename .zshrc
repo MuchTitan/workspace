@@ -2,29 +2,19 @@
 
 eval "$(starship init zsh)"
 
-# --- PATH and other Setup ---
+# --- PATH ---
 
-. "$HOME/.cargo/env"
-. "$HOME/.deno/env"
-export PATH=$PATH:/usr/local/go/bin:~/.local/bin:/snap/bin:~/go/bin:$BUN_INSTALL/bin:$HOME/.pyenv/bin:$PATH
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH=$PATH:/usr/local/go/bin:~/.local/bin:/snap/bin:~/go/bin
 
 # --- oh-my-zsh ---
 
 export ZSH="$HOME/.oh-my-zsh"
 source $ZSH/plugins/git/git.plugin.zsh
-source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH/oh-my-zsh.sh
-
-# --- Homebrew setup ---
-
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # --- FZF ---
 
-eval "$(fzf --zsh)"
+source $HOME/.fzf.zsh
 
 # --- Use fd instead of fzf ---
 
@@ -69,7 +59,7 @@ _fzf_comprun() {
 # --- Bat (better cat) ---
 
 export BAT_THEME="Catppuccin Macchiato"
-alias cat="bat -p --color=always"
+alias cat="batcat -p --color=always"
 
 # --- eza (better ls) ---
 
@@ -93,16 +83,4 @@ alias vim="nvim"
 alias reload-zsh="source ~/.zshrc"
 alias edit-zsh="nvim ~/.zshrc"
 alias k="kubectl"
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-eval "$(pyenv init --path)"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
-if [ ! "$TMUX" ]; then
-    tmux attach -t main || tmux new -s main
-fi
-
 export EDITOR=nvim
